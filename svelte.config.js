@@ -9,10 +9,10 @@ const config = {
 			      fallback: '404.html'
 		    }),
 		    files: {
-          routes: 'src/routes' // Change 'src/pages' to your custom routes folder
+          routes: 'src/routes'
         },
         paths: {
-            base: process.env.NODE_ENV === 'production' ? '/d3' : '',
+            base: process.env.NODE_ENV === 'production' ? '/visual-history-imo' : '',
         }
     }
 };
