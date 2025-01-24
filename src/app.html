@@ -3,22 +3,13 @@
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="%sveltekit.assets%/favicon.png" />
+		<link rel="stylesheet" href="/css/index.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		%sveltekit.head%
-		<script>
-      const data = [10, 20, 30, 40, 50];
-    </script>
 	</head>
 	<body data-sveltekit-preload-data="hover">
 		<div style="display: contents">
 		  %sveltekit.body%
-		  <div id="chart-container">
-        <svg viewBox="0 0 600 60">
-          {#each data as d}
-          <circle cx={d * 8} cy="20" r="20" fill="red" />
-          {/each}
-        </svg>
-      </div>
 		</div>
 	</body>
 </html>
