@@ -60,6 +60,13 @@
   
   <div class="chart" bind:clientWidth={width}>
     <svg {width} {height}>
+    
+    <g class="title">
+      <text x="50" y="30" text-anchor="start">
+      Number of team members per year
+      </text>
+    </g>
+  
       <g class="bars">
       {#each processedData as { year, total }}
       <rect
@@ -71,7 +78,7 @@
       {/each}
       </g>
       
-      <g class="txt">
+      <g class="x-axis">
       {#each processedData as { year, total }}
       <text x={xScale(year) + 0.75 * xScale.bandwidth()} y={320} text-anchor="middle" alignment-baseline="bottom"  transform="rotate(-90 {xScale(year) + 0.75 * xScale.bandwidth()}, 320)" >{year}</text>
   {/each}
@@ -84,6 +91,13 @@
   
   <div class="chart" bind:clientWidth={width}>
     <svg {width} {height}>
+    
+      <g class="title">
+        <text x="50" y="30" text-anchor="start">
+        Number of male team members per year
+        </text>
+      </g>
+    
       <g class="male-bars">
       {#each processedData as { year, team_size_male }}
       <rect
@@ -95,7 +109,7 @@
       {/each}
       </g>
       
-      <g class="txt">
+      <g class="x-axis">
       {#each processedData as { year, total }}
       <text x={xScale(year) + 0.75 * xScale.bandwidth()} y={320} text-anchor="middle" alignment-baseline="bottom"  transform="rotate(-90 {xScale(year) + 0.75 * xScale.bandwidth()}, 320)" >{year}</text>
   {/each}
@@ -106,6 +120,13 @@
   
   <div class="chart" bind:clientWidth={width}>
     <svg {width} {height}>
+    
+      <g class="title">
+        <text x="50" y="30" text-anchor="start">
+        Number of female team members per year
+        </text>
+      </g>
+    
       <g class="female-bars">
       {#each processedData as { year, team_size_female }}
       <rect
@@ -117,7 +138,7 @@
       {/each}
       </g>
       
-      <g class="txt">
+      <g class="x-axis">
       {#each processedData as { year, total }}
       <text x={xScale(year) + 0.75 * xScale.bandwidth()} y={320} text-anchor="middle" alignment-baseline="bottom"  transform="rotate(-90 {xScale(year) + 0.75 * xScale.bandwidth()}, 320)" >{year}</text>
   {/each}
@@ -148,10 +169,19 @@
   stroke: none;
 }
 
-.txt text {
-  stroke: #F0F5F5;
+.x-axis text {
+  fill: #F0F5F5;
+  stroke: none;
   font-size: x-small;
   font-family: 'Commissioner', Arial, sans-serif;
+}
+
+.title text {
+  font-weight: bold;
+  stroke: none;
+  fill: #F0F5F5;
+  font-size: large;
+  font-family: 'Fraunces', 'Times New Roman', Times, serif;
 }
 
 </style>
