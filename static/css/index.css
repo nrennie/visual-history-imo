@@ -9,10 +9,14 @@ body {
 }
 
 a {
-  color: #E30B5C;
+  color: #BD4089;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Fraunces', 'Times New Roman', Times, serif;
   font-weight: 700;
+}
+
+h1 {
+  padding-top: 10px;
 }
